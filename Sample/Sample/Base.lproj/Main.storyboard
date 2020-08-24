@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCj-qa-AmT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="sNF-Rq-CiD">
+            <objects>
+                <viewController id="YCj-qa-AmT" customClass="GameViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bFb-PT-AIr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W47-Mr-cBF">
+                                <rect key="frame" x="20" y="86" width="374" height="374"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W47-Mr-cBF" secondAttribute="height" multiplier="1:1" id="9Fq-r5-fh9"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F3W-h8-3Wa">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCollectionViewCell" id="DPv-jG-jMe" customClass="CellCollectionViewCell" customModule="Sample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4Ka-CH-jOB">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="squareView" destination="4Ka-CH-jOB" id="P8j-d1-hp5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YCj-qa-AmT" id="Ljm-UE-XOw"/>
+                                    <outlet property="delegate" destination="YCj-qa-AmT" id="jEv-iX-2Um"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-oU-M0R">
+                                <rect key="frame" x="292" y="839" width="22" height="23"/>
+                                <state key="normal" image="play" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                </state>
+                                <connections>
+                                    <action selector="Play:" destination="YCj-qa-AmT" eventType="touchUpInside" id="PJR-hF-AOX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEJ-el-dfQ">
+                                <rect key="frame" x="367" y="52" width="27" height="26"/>
+                                <state key="normal" image="info.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-fT-gKq">
+                                <rect key="frame" x="100" y="836" width="29" height="26"/>
+                                <state key="normal" image="wand.and.stars.inverse" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4AG-fT-gKq" firstAttribute="bottom" secondItem="zdS-IQ-70Y" secondAttribute="bottom" id="46k-03-dmB"/>
+                            <constraint firstItem="W47-Mr-cBF" firstAttribute="top" secondItem="DEJ-el-dfQ" secondAttribute="bottom" constant="8" id="4NM-WO-pdL"/>
+                            <constraint firstItem="4AG-fT-gKq" firstAttribute="leading" secondItem="zdS-IQ-70Y" secondAttribute="leading" constant="100" id="AxL-7T-ewn"/>
+                            <constraint firstItem="zdS-IQ-70Y" firstAttribute="trailing" secondItem="DEJ-el-dfQ" secondAttribute="trailing" constant="20" id="IVf-Nd-i2F"/>
+                            <constraint firstItem="DEJ-el-dfQ" firstAttribute="top" secondItem="zdS-IQ-70Y" secondAttribute="top" constant="8" id="OQg-me-kE0"/>
+                            <constraint firstItem="W47-Mr-cBF" firstAttribute="leading" secondItem="zdS-IQ-70Y" secondAttribute="leading" constant="20" id="SiX-E8-FbP"/>
+                            <constraint firstItem="zdS-IQ-70Y" firstAttribute="trailing" secondItem="W47-Mr-cBF" secondAttribute="trailing" constant="20" id="TJL-7J-gUL"/>
+                            <constraint firstItem="zdS-IQ-70Y" firstAttribute="trailing" secondItem="wJB-oU-M0R" secondAttribute="trailing" constant="100" id="oig-13-TNn"/>
+                            <constraint firstItem="wJB-oU-M0R" firstAttribute="bottom" secondItem="zdS-IQ-70Y" secondAttribute="bottom" id="pcN-MP-6PL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zdS-IQ-70Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameCollectionView" destination="W47-Mr-cBF" id="KaX-fg-q1Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kw-Kb-DUu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.1449275362319" y="-62.276785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <image name="wand.and.stars.inverse" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
